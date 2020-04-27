@@ -5,6 +5,7 @@ Simpler docker setup for GraphQL Mesh and MySQL.
 # Start up
 
 ```sh
+# Download MySQL example database loader
 git clone https://github.com/datacharmer/test_db
 docker-compose up -d mysql
 # Watch logs of mysql and wait.
@@ -33,3 +34,4 @@ docker-compose down
 - [GraphQL Mesh](https://github.com/Urigo/graphql-mesh)
 - [GraphQL Mesh MySQL Employee example](https://github.com/Urigo/graphql-mesh/tree/master/examples/mysql-employees)
 - [Employee database](https://github.com/datacharmer/test_db)
+- [GraphQL Mesh Docker](https://github.com/onelittlenightmusic/graphql-mesh-docker)
