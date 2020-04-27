@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  # not suceeded
+  mesh:
+    volumes:
+    - ./:/work
+    image: hiroyukiosaki/graphql-mesh:v0.1.10
+    ports:
+    - "4000:4000"
+    command:
+    - /bin/bash
+    - -c
+    - yarn install && yarn start
+    # - sleep 3600
+    depends_on: 
+    - mysql
+  mysql:
+    image: mysql
+    ports:
+    - "3306:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=passwd
+    volumes:
+    - ./test_db/:/test_db
+    - ./init.sh:/docker-entrypoint-initdb.d/init.sh
+    command:
+    - --default-authentication-plugin=mysql_native_password
